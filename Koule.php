@@ -7,6 +7,7 @@ class Koule implements ITeleso
 
     /**
      * set R
+     * @param $r r
      */
     public function setR($r)
     {
@@ -18,16 +19,31 @@ class Koule implements ITeleso
         $this->setR($r);
     }
 
+    /**
+     * vypočet povrch tělesa
+     * 
+     * @return float
+     */
     public function povrch(): float
     {
         return 4 * M_PI * ($this->r ** 2);
     }
 
+    /**
+     * výpočet a vrátí objem tělesa
+     * 
+     * @return float
+     */
     public function objem(): float
     {
         return (4 / 3) * M_PI * ($this->r ** 3);
     }
 
+    /**
+     * testuje, je-li objekt trojrozměrný
+     * 
+     * @return float
+     */
     public function is3D(): bool
     {
         if ($this->r > 0) {
@@ -37,11 +53,21 @@ class Koule implements ITeleso
         }
     }
 
+    /**
+     * vrací počet vecholů tělesa
+     * 
+     * @return integer počat vrcholů když je trojrozměrný, jinak 0
+     */
     public function pocetVrcholu(): int
     {
         return 0;
     }
 
+    /**
+     * vygeneruje řetezec informující o telesu (jeho název a rozměr...)
+     * 
+     * @return string
+     */
     public function info(): string
     {
         return "Koule<br>\n" .
